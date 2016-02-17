@@ -1,0 +1,17 @@
+# NGINX configuration for default vhost.
+# Managed by Puppet. Changes will be overwritten.
+
+server {
+	# Allow any "Host" header.
+	server_name   _;
+
+	listen        <%= @port %> default_server;
+	listen        [::]:<%= @port %> default_server;
+
+	root          <%= @docroot %>;
+	index         index.html;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
