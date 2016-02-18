@@ -7,4 +7,9 @@ node default {
         port => 8888,
         docroot => $docroot,
     }
+
+    class { "git_deploy":
+        url => "git@github.com:nwea-techops/tech_quiz.git",
+        deploy_to => $docroot,
+    }
 }
