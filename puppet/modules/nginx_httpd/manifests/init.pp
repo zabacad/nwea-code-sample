@@ -1,3 +1,10 @@
+#
+# Sets up NGINX to serve HTTP requests from the local filesystem. Uses the default vhost.
+#
+#  port    - Port to listen for HTTP connections. Default: 80
+#  docroot - Directory to serve files from. Default: "/var/www/html"
+#
+
 class nginx_httpd (
     $port = 80,
     $docroot = "/var/www/html",
@@ -28,7 +35,7 @@ class nginx_httpd (
         target => "../sites-available/default",
     }
 
-    # Docroot files
+    # Docroot files. User or automation will need to populate.
     file { $docroot:
         # Disabled: Puppet cannot create parent directories.
         # ensure => directory,
