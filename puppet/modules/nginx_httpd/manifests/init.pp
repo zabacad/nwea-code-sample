@@ -12,19 +12,25 @@ class nginx_httpd (
         ensure => running,
     }
 
-    # Configuration files
+    # Create config for default vhost.
     file { "/etc/nginx/sites-available/default":
-        # Install package before this file.
+        # Install package before this file or /etc/nginx/ won't exist.
         require => Package['nginx'],
         ensure => file,
         content => template("nginx_httpd/default.erb"),
     }
 
+    # Enable default vhost.
+    file { "/etc/nginx/sites-enabled/default":
+        notify => Service["nginx"],
+        require => File["/etc/nginx/sites-available/default"],
+        ensure => link,
+        target => "../sites-available/default",
+    }
+
     # Docroot files
     file { $docroot:
-        # Install package before this file.
-        require => Package['nginx'],
-        # Puppet cannot create parent directories.
-        #ensure => directory,
+        # Disabled: Puppet cannot create parent directories.
+        # ensure => directory,
     }
 }
