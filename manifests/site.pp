@@ -9,7 +9,7 @@ node default {
   }
 
   class { "git_deploy":
-    url       => "git@github.com:nwea-techops/tech_quiz.git",
+    url       => "git://github.com/nwea-techops/tech_quiz.git",
     deploy_to => $docroot,
   }
 }

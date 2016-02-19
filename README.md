@@ -33,11 +33,11 @@ This was tested on an LXC container running Ubuntu 14.04 LTS ("Trusty").
 
 3. Clone this repo into `/etc/puppet`.
 
-        # git clone git@github.com:zabacad/nwea-code-sample.git /etc/puppet
+        # git clone git://github.com/zabacad/nwea-code-sample.git /etc/puppet
 
 4. Run `puppet apply` using the included manifest.
 
-        # puppet apply --test /etc/puppet/manifests/site.pp
+        # puppet apply /etc/puppet/manifests/site.pp
 
 5. Check that NGINX is serving the desired content.
 
