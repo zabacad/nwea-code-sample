@@ -52,11 +52,11 @@ how they work. (Also, Puppet Labs is local.) I also considered Ansible because
 I have seen it in action a little.
 
 I created my own modules rather than use community ones to demonstrate ability
-and coding style. They also also much smaller and to the point.
+and coding style. They are also also much smaller and to the point.
 
 I chose Ubuntu because I have a working NGINX configuration that I could refer
 back to. This is also the OS I have seen Puppet run on and the one I have most
-experience with, so I knew the distribution-specific paths and package quirks.
+recent and extensive experience with, so I knew the distribution-specific paths and package managment quirks.
 
 ### What is the best part of this soluction?
 
@@ -66,9 +66,9 @@ Git modules can each be used on their own.
 
 ### What is the worst part of this solution?
 
-This is no formal nor automated testing. There are number of known and unknown
-failure modes for this solution, but there is no proper way of knowing them
-without proper testing.
+This is no formal nor automated testing. There are a number of known and
+unknown failure modes for this solution, but there is no proper way of knowing
+them without proper testing.
 
 Additionally, file and process ownership is not taken into account, which is a
 security risk.
